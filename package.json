@@ -1,0 +1,27 @@
+{
+  "name": "nodeapi",
+  "version": "1.0.0",
+  "description": "aprendiendo a usar node, express",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToleHdz/NodeAPI.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Express"
+  ],
+  "author": "Tole Hdz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ToleHdz/NodeAPI/issues"
+  },
+  "homepage": "https://github.com/ToleHdz/NodeAPI#readme",
+  "dependencies": {
+    "express": "^4.16.0"
+  }
+}
