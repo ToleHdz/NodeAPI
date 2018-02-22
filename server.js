@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express()
-//var JSONParser = require("body-parser")
+var JSONParser = require("body-parser")
 
 var MiUser = require("./modules/user.js")
 
@@ -15,4 +15,10 @@ app.get('/', (request, response) =>
 	response.send(MiUser.data.completeName())
 	response.end()
 	
+});
+
+app.post('/user', (request, response) => 
+{
+	response.json(MiUser.data)
+	response.end()
 });
