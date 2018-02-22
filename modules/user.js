@@ -2,8 +2,8 @@ exports.data =
 {
 	name : "Jose Alberto",
 	lastName : "Tolentino",
-	completeName : function()
+	completeName : function() 
 	{
-		return this.name + ' ' + this.lastName; 
+		return this.name + ' ' + this.lastName
 	}
 };

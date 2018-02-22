@@ -18,28 +18,28 @@ app.get('/', (request, response) =>
 	
 });
 
-/*app.post('/user', (request, response) => 
+app.post('/user', (request, response) => 
 {
 	const respuesta = {completeName : MiUser.data.completeName()}
 	response.json(respuesta)
 	response.end()
-}); */
+}); 
 
-app.post('/user', (request, response) =>
+/*app.post('/user', (request, response) =>
 {
-	response.json(request.body)
+	response.json(request.body)				//request.body es el json que nosotros enviamos
 	response.end()
 
 	console.log(request.body)
 	//console.log(request.body.data.name)
-});
+}); */
 
 app.put('/user', (request, response) =>
 {
 	response.json(request.body)
 	response.end()
 
-	console.log(request.body.data.name + ' ' + request.body.data.lastName)
+	console.log(request.body.data.name + ' ' + request.body.data.lastName)			//accedemos a los atributos de nuestro json
 });
 
 //servidor de base de datos mongo
