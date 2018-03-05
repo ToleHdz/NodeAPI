@@ -1,46 +1,58 @@
-const express = require("express")
-const app = express()
-const JSONParser = require('body-parser')
-var MiUser = require("./modules/user.js")
+	const express = require("express")
+	const app = express()
+	const JSONParser = require('body-parser')
+	var MiUser = require("./modules/user.js")
 
 
-app.listen(3000, () =>
-{
-	console.log('Listening on 3000')
-});
+	app.listen(3000, () =>
+	{
+		console.log('Listening on 3000')
+	});
 
-app.use(JSONParser.json())
+	app.use(JSONParser.json())
 
-app.get('/', (request, response) => 
-{
-	response.send(MiUser.data.completeName())
-	response.end()
-	
-});
+	app.get('/', (request, response) => 
+	{
+		response.send(MiUser.data.completeName())
+		response.end()
+		
+	});
 
-app.post('/user', (request, response) => 
-{
-	const respuesta = {completeName : MiUser.data.completeName()}
-	response.json(respuesta)
-	response.end()
-}); 
+	app.post('/user', (request, response) => 
+	{
+		const respuesta = {completeName : MiUser.data.completeName()}
+		response.json(respuesta)
+		response.end()
+	}); 
 
-/*app.post('/user', (request, response) =>
-{
-	response.json(request.body)				//request.body es el json que nosotros enviamos
-	response.end()
+	/*app.post('/user', (request, response) =>
+	{
+		response.json(request.body)				//request.body es el json que nosotros enviamos
+		response.end()
 
-	console.log(request.body)
-	//console.log(request.body.data.name)
-}); */
+		console.log(request.body)
+		//console.log(request.body.data.name)
+	}); */
 
-app.put('/user', (request, response) =>
-{
-	response.json(request.body)
-	response.end()
+	app.put('/user', (request, response) =>
+	{
+		if (request.body.data !== undefined) 
+		{
+			response.json(request.body)
+			response.end()
+			console.log(request.body.data.name + ' ' + request.body.data.lastName)			//accedemos a los atributos de nuestro json
+		} 
+		else 
+		{
+			const mensaje = {
+						  	message : "No te devolvere nada senpai :c"
+						  };
 
-	console.log(request.body.data.name + ' ' + request.body.data.lastName)			//accedemos a los atributos de nuestro json
-});
+			response.json(mensaje)
+			response.end()
+		}	
 
-//servidor de base de datos mongo
-//http://donwebayuda.com/tutorial-mongodb-creacion-de-base-de-datos-conexion-remota-y-securizacion/
+	});
+
+	//servidor de base de datos mongo
+	//http://donwebayuda.com/tutorial-mongodb-creacion-de-base-de-datos-conexion-remota-y-securizacion/
