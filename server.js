@@ -44,9 +44,9 @@
 		} 
 		else 
 		{
-			const mensaje = {
-						  	message : "No te devolvere nada senpai :c"
-						  };
+			const mensaje =	{
+						  		message : "No te devolvere nada senpai :c"
+						  	};
 
 			response.json(mensaje)
 			response.end()
@@ -56,3 +56,4 @@
 
 	//servidor de base de datos mongo
 	//http://donwebayuda.com/tutorial-mongodb-creacion-de-base-de-datos-conexion-remota-y-securizacion/
+	//curso de mongoDB https://github.com/galindoRosendo/tallerMDBNJS/blob/master/Proyecto/views/index.ejs
